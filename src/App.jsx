@@ -93,7 +93,7 @@ export default function App() {
           <div className="brand">
             <span className="shield-icon">🛡️</span>
             <span className="brand-name">ritesh-leak-shield</span>
-            <span className="react-tag">React 18</span>
+            <span className="react-tag">React 19</span>
             <span className="version-tag">v1.0.0</span>
           </div>
           <div className="nav-links">
