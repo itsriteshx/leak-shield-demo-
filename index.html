@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeakShield Web Playground | Live Secret Scanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Glow decorations -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="app-layout">
+      <!-- Navbar -->
+      <header class="app-nav">
+        <div class="brand">
+          <span class="shield-icon">🛡️</span>
+          <span class="brand-name">ritesh-leak-shield</span>
+          <span class="version-tag">v1.0.0</span>
+        </div>
+        <div class="nav-links">
+          <a
+            href="https://www.npmjs.com/package/ritesh-leak-shield"
+            target="_blank"
+            class="nav-btn npm-btn"
+          >
+            <span class="npm-logo">npm</span> ritesh-leak-shield
+          </a>
+          <a
+            href="https://github.com/itsriteshx/leak-shield-"
+            target="_blank"
+            class="nav-btn gh-btn"
+          >
+            GitHub
+          </a>
+        </div>
+      </header>
+
+      <!-- Main container -->
+      <main class="main-content">
+        <section class="hero-section">
+          <h1 class="hero-title">Live Secret & Credential Scanner</h1>
+          <p class="hero-desc">
+            Test and see <code>ritesh-leak-shield</code> in action. Paste any code,
+            config, or log snippet below to detect leaked API keys, tokens, and passwords in real-time.
+          </p>
+        </section>
+
+        <!-- Presets -->
+        <div class="presets-row">
+          <span class="presets-label">Quick Test Samples:</span>
+          <button id="btn-sample-dirty" class="preset-btn active-preset">
+            ⚠️ Leaked AI & Stripe Keys
+          </button>
+          <button id="btn-sample-cloud" class="preset-btn">
+            ☁️ AWS & MongoDB URIs
+          </button>
+          <button id="btn-sample-clean" class="preset-btn">
+            ✅ Clean Sanitized Code
+          </button>
+        </div>
+
+        <!-- Scanner Dashboard Grid -->
+        <div class="dashboard-grid">
+          <!-- Editor Panel -->
+          <div class="panel editor-panel">
+            <div class="panel-header">
+              <span class="panel-title">Code / Config Input</span>
+              <button id="btn-sanitize" class="btn-action">
+                ✨ Auto-Redact Secrets
+              </button>
+            </div>
+            <div class="editor-wrapper">
+              <textarea
+                id="code-input"
+                spellcheck="false"
+                placeholder="Paste code or .env file content here..."
+              ></textarea>
+            </div>
+            <div class="panel-footer">
+              <span id="char-count">0 characters</span>
+              <button id="btn-scan" class="btn-primary">
+                🛡️ Scan Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Results Panel -->
+          <div class="panel results-panel">
+            <div class="panel-header">
+              <span class="panel-title">Audit Report</span>
+              <div id="security-pill" class="security-pill">Pending Scan</div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-row">
+              <div class="stat-card">
+                <span class="stat-num" id="stat-critical">0</span>
+                <span class="stat-name">Critical</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" id="stat-high">0</span>
+                <span class="stat-name">High</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" id="stat-total">0</span>
+                <span class="stat-name">Total Leaks</span>
+              </div>
+            </div>
+
+            <!-- Findings List -->
+            <div class="findings-container" id="findings-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Integration Showcase -->
+        <section class="integration-showcase">
+          <div class="showcase-card">
+            <h3>💻 Run via Terminal (CLI)</h3>
+            <p>Scan any repository in 4ms with zero configuration:</p>
+            <pre><code><span class="cmd">npx</span> ritesh-leak-shield scan .</code></pre>
+          </div>
+          <div class="showcase-card">
+            <h3>🪝 Git Pre-Commit Shield</h3>
+            <p>Automatically prevent secret commits forever:</p>
+            <pre><code><span class="cmd">npx</span> ritesh-leak-shield hook install</code></pre>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+          <p>
+            Created by <strong>Ritesh</strong> |
+            <a href="https://github.com/itsriteshx" target="_blank">@itsriteshx</a>
+            • MIT Licensed
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
